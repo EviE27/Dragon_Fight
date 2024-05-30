@@ -10,7 +10,7 @@ class Player:
 
   def movement(self, playerchoice):
       """Contains the code that prints the movement options for the player
-      and allows the player to move around the map"""
+      and allows the player to be able to move around the map"""
       # All the valid options the player has for movement
       MoveOptions = ["w", "a" ,"s" ,"d" ,"e"]
       # Plays the loop so long as a valid choice has not been selected

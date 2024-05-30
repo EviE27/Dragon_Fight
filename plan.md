@@ -19,7 +19,7 @@ Player movement around map\
 ### V2
 Sami\
 Items - Potions - healing and damage\
-      - Weapons - stick, 
+      - Weapons - stick(start with), sword(armory), gold sword(Tresure) 
 
 
 
