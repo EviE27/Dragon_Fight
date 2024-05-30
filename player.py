@@ -1,7 +1,8 @@
 class Player:
 
-  def __init__(self, x_loc, y_loc, area):
+  def __init__(self, health, x_loc, y_loc, area):
     # Contains the statistics and location of the player
+    self.health = health
     self.x_loc = x_loc
     self.y_loc = y_loc
     self.area = area
@@ -66,14 +67,26 @@ class Player:
                       self.x_loc = self.x_loc - 1
                       print("Moving Left")
                   # Checks if the player wants to move right
-                  if playerchoice == "d":
+                  elif playerchoice == "d":
                       # The player is moved 1 room to the right
-                      self.x_loc = self.x_loc + !
+                      self.x_loc = self.x_loc + 1
+                      print("Moving Right")
+                  # Checks if the player wants to move up
+                  elif playerchoice == "w":
+                      # The player is moved 1 room up
+                      self.y_loc = self.y_loc - 1
+                      print("Moving Up")
+                  # Checks if the player wants to move down
+                  elif playerchoice == "s":
+                      # The player is moved 1 room down
+                      self.y_loc = self.y_loc + 1
+                      print("Moving Down")
+
                 
 
                 
     
 
 
-player = Player(1, 2, "plains")
+user = Player(100, 1, 2, "plains")
 

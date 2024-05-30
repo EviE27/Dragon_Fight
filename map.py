@@ -2,9 +2,10 @@ from tabulate import tabulate
 
 
 class Map:
-    def __init__(self, map):
+    
+    def __init__(self, map, external_file):
         self.map = map
-        self.mapfile = 'map.txt'
+        self.mapfile = external_file
         
     def WriteMap(self):
         try:
@@ -27,6 +28,10 @@ class Map:
             print("")
         finally:
             print("")
+            
+    def ShowMap(self):
+        self.WriteMap()
+        self.ReadMap()
 
 
 class Room:
@@ -65,3 +70,19 @@ tower_map = [
     [hallway, map, hallway],
     [wizard, kitchen, entrance]
 ]
+
+plainmap = [
+    ["armory", "bar", "entrance"],
+    ["forest", "beware", "brewery"],
+    ["town", "start", "library"]
+]
+
+towermap = [
+    ["stairs", "treasure", "grunt"],
+    ["hallway", "map", "hallway"],
+    ["wizard", "kitchen", "entrance"]
+]
+
+# Create map objects
+map1 = Map(plainmap, 'plain_map.txt')
+map2 = Map(towermap, 'tower_map.txt')

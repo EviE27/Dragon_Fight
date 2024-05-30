@@ -18,7 +18,8 @@ Weapons
 ## Nice to have:
 Spells\
 Multiple Characters\
-Weaker enemy in plains
+Weaker enemy in plains\
+Wizard that gives you powers
 
 
 ## Map
