@@ -8,28 +8,35 @@ class Map:
         self.mapfile = external_file
         
     def WriteMap(self):
+        ''' The function writes map to an external file.'''
         try:
             with open(self.mapfile,"w") as file:
                 file.write(tabulate(self.map, tablefmt = 'fancy_grid'))
         except:
-            print("")
+            print("Failed to write map!")
         else:
-            print("")
+            print("Map has been created.")
         finally:
-            print("")
+            print("Let's explore!")
             
     def ReadMap(self):
+        ''' The function reads and prints map from an
+        external file.
+        '''
         try:
             with open(self.mapfile, "r") as file:
                 print(file.read())
         except:
-            print("")
+            print("Oh! Can't read the map.")
         else:
-            print("")
+            print("Here's the map.")
         finally:
-            print("")
+            print("Good luck!!")
             
     def ShowMap(self):
+        ''' The function contains functions that write 
+        and read map.
+        '''
         self.WriteMap()
         self.ReadMap()
 
@@ -58,7 +65,9 @@ treasure = Room("")
 map = Room("")
 kitchen = Room("")
 grunt = Room("")
+entrance1 = Room("")
 
+# Arrays of rooms
 plain_map = [
     [armory, bar, entrance],
     [forest, beware, brewery],
@@ -68,9 +77,10 @@ plain_map = [
 tower_map = [
     [stairs, treasure, grunt],
     [hallway, map, hallway],
-    [wizard, kitchen, entrance]
+    [wizard, kitchen, entrance1]
 ]
 
+# Arrays of map 
 plainmap = [
     ["armory", "bar", "entrance"],
     ["forest", "beware", "brewery"],

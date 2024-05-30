@@ -1,3 +1,6 @@
+import map
+
+
 class Player:
 
   def __init__(self, health, x_loc, y_loc, area):
@@ -88,5 +91,5 @@ class Player:
     
 
 
-user = Player(100, 1, 2, "plains")
+user = Player(100, 1, 2, map.plain_map)
 

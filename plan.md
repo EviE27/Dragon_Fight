@@ -9,17 +9,53 @@ Tower map - has the tiles where you will be able to fight the fianl boss, get be
 Eve\
 Complete...\
 description for rooms
+library - find gold sword
 
 ### V1.3
 Sami 
 Complete May 30\
 Player movement around map\
+Step Player object
 
+### Test
+See if player can move around map and between maps
 
 ### V2
-Sami\
+Sami, Suri\
+complete June 4th\
+Set up object name, damage, description\
 Items - Potions - healing and damage\
-      - Weapons - stick(start with), sword(armory), gold sword(Tresure) 
+      - Weapons - stick(start with), sword(armory), gold sword(Tresure)\
+      - KfC chicken (kitchen) healing\
+      - key (Grunt Room) to open treasure room
 
 
+### V3 
+Suri\
+Complete June 6th\
+inventory new modual\
+inventory - stores players objects that they pick up\
 
+
+### V3.1
+Sami\
+Complete June 7th\
+search - in inventory
+make function that will find objects and put them in player inventory. 
+
+
+### V4
+???
+Complete June 12\
+Combat - Health, damage, Final boss fight\
+Enemy atacks
+player attacks
+
+
+      
+
+      
+
+
+### notes
+player odject - movement, inventory, health
