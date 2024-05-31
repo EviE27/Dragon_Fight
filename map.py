@@ -47,14 +47,16 @@ class Room:
 
 
 # Rooms for plain map
-armory = Room("")
-forest = Room("")
-town = Room("")
-bar = Room("")
-beware = Room("")
+armory = Room("You have entered the Armory.")
+forest = Room("You are in the dark forest.")
+town = Room("You are walking through the small town.")
+bar = Room("You enter the local bar. It looks like theres a fight.")
+beware = Room("You stumbel across a warning to beware of the dragon in the tower.")
 start = Room("")
-entrance = Room("")
-brewery = Room("")
+entrance = Room("""You aproch the tall stone tower.
+The tower has a giant woodend door with thick metal bars over it.""")
+brewery = Room("""You walked into the magical brewery. 
+The room is filled with potions and ingredients and in the middel a large stone pot.""")
 library = Room("")
 
 # Rooms for tower map

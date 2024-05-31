@@ -7,7 +7,7 @@ Tower map - has the tiles where you will be able to fight the fianl boss, get be
 
 ### V1.2
 Eve\
-Complete...\
+Complete june 3th\
 description for rooms
 library - find gold sword
 
@@ -18,6 +18,7 @@ Player movement around map\
 Step Player object
 
 ### Test
+
 See if player can move around map and between maps
 
 ### V2
@@ -50,6 +51,9 @@ Complete June 12\
 Combat - Health, damage, Final boss fight\
 Enemy atacks
 player attacks
+
+## Test day
+June 12th
 
 
       

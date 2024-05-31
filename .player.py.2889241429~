@@ -14,10 +14,10 @@ class Player:
         def describeroom(self):
                 """Code that prints the description of the room 
                 that the player is currently in"""
-                rooms = self.area[self.y_loc][self.x_loc]
-                print("\n")
-                print(rooms.description)
-                print('\n')
+                rooms = self.area[self.y_loc]
+                                print(rooms)
+                                print("\n")
+                                print(rooms.description)
 
     
         def movement(self, playerchoice):
