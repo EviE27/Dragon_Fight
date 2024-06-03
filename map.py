@@ -57,17 +57,18 @@ entrance = Room("""You aproch the tall stone tower.
 The tower has a giant woodend door with thick metal bars over it.""")
 brewery = Room("""You walked into the magical brewery. 
 The room is filled with potions and ingredients and in the middel a large stone pot.""")
-library = Room("")
+library = Room("""You enter the library. 
+everywhere you look there are shelves upon shelves of magical books""")
 
 # Rooms for tower map
-stairs = Room("")
-hallway = Room("")
+stairs = Room("You are walking up a flight of stairs and Woosh the dragon flys in!")
+hallway = Room("You are traveling down the cold, stone, candle lit hallway")
 wizard = Room("")
-treasure = Room("")
-map = Room("")
-kitchen = Room("")
+treasure = Room("""You made it to the treasure room!
+Everywhere you look there are piles upon piles of treasure.""")
+kitchen = Room("You smell the sweet smell of fryed chiken. You have wondered into KFC")
 grunt = Room("")
-entrance1 = Room("")
+entrance1 = Room("You have entered")
 
 # Arrays of rooms
 plain_map = [
@@ -78,7 +79,7 @@ plain_map = [
 
 tower_map = [
     [stairs, treasure, grunt],
-    [hallway, map, hallway],
+    [hallway, hallway, hallway],
     [wizard, kitchen, entrance1]
 ]
 
@@ -91,7 +92,7 @@ plainmap = [
 
 towermap = [
     ["stairs", "treasure", "grunt"],
-    ["hallway", "map", "hallway"],
+    ["hallway", "hallway", "hallway"],
     ["wizard", "kitchen", "entrance"]
 ]
 
