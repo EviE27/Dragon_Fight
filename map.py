@@ -63,12 +63,12 @@ everywhere you look there are shelves upon shelves of magical books""")
 # Rooms for tower map
 stairs = Room("You are walking up a flight of stairs and Woosh the dragon flys in!")
 hallway = Room("You are traveling down the cold, stone, candle lit hallway")
-wizard = Room("")
+wizard = Room("It looks like you have entered some type of dungen or is it")
 treasure = Room("""You made it to the treasure room!
 Everywhere you look there are piles upon piles of treasure.""")
 kitchen = Room("You smell the sweet smell of fryed chiken. You have wondered into KFC")
-grunt = Room("")
-entrance1 = Room("You have entered")
+grunt = Room("You are in the grunt room. Get ready to fight.")
+entrance1 = Room("You have entered the tower. Be careful ")
 
 # Arrays of rooms
 plain_map = [

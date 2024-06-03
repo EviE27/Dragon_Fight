@@ -41,25 +41,42 @@ heal_potion = Item("Healing Potion",
                   """You drink the potion. Your wounds fade 
 and weariness leaves your body.""",
                   1,
-                  """A potion that can heal """)
+                  """A potion that can heal even the most major wounds""")
 
+
+chicken = Item("Chicken",
+              -25,
+              """You eat the chicken and suddenly feel a lot better!""",
+              1,
+              """Some chicken that can heal minor wounds""")
 
 stick = Item("Pointy Stick",
             5,
             """You poke the enemy with your stick!""",
-            0)
+            0,
+            """A stick capable of dealing minor damage. 
+Still it's better than nothing.""")
 
 
 sword = Item("Sword",
             10,
             """You unsheathe your sword and slash at the enemy!""",
-            0)
+            0,
+            """A steel sword capable of dealing major damage.
+An always reliable weapon favoured by many warriors.""")
 
 
 gold_sword = Item("Golden Sword",
                  15,
                  """You cut down the enemy with arcane powers!""",
-                 0)
+                 0,
+                 """A Golden Sword c""")
+
+key = Item("Key",
+          None,
+          """You open the treasure room with the key.""",
+          None,
+          """A key that is specially designed for the treasure room.""")
 
 
 
