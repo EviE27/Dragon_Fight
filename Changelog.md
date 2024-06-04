@@ -15,10 +15,12 @@ added- item discription
 
 
 V3\
-add - player inventory\
-add - search function\
-add - function to get item\
-added - comments 
+added - player inventory\
+added - search function\
+added - function to get item\
+added - comments\
+changed - room descriptions and len lengths\
+added - location to items
 
 
 

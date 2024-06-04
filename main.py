@@ -21,8 +21,8 @@ def main_menu():
         while loop == "Y":
             # Prints out the player's movement options
             print("\n")
-            print("- move")
-            print("- map")
+            for action in user.action:
+                print(f"-{action}")
             # Player can choose from the above options
             user_input = input("Choose an action: ").lower()
             # If the player chooses to move, the movement function will run

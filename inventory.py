@@ -1,4 +1,5 @@
-import map
+from player import user
+
 
 class Inventory:
 
@@ -19,4 +20,15 @@ class Inventory:
     def searchroom(self):
         """Code for searching rooms"""
         try:
-            self.inventory.append()
+            room = user.area[user.y_loc][user.x_loc]
+            if room.item != "N/A":
+                    self.inventory.append(room.item)
+                    print(f"You found {room.item}!")
+                    print(f"You put {room.item} away in your inventory!")
+        except:
+            print("Nothing notable in here...")
+        finally:
+            print("\n")
+            print("Search complete!")
+            print("\n")
+            
