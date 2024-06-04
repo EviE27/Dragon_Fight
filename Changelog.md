@@ -9,8 +9,18 @@ added - player movement\
 
 
 v2\
-add - items for the rooms\
-add - item damage\
-add - item discription
+added - items for the rooms\
+added - item damage\
+added- item discription
+
+
+V3\
+add - player inventory\
+add - search function\
+add - function to get item\
+added - comments 
+
+
+
 
 

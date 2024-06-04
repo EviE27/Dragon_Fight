@@ -2,28 +2,38 @@ from player import user
 
 
 class Item:
-
+# Generic item class
   def __init__(self, name, damage, dialogue, temp, description):
+    # Name of the item
     self.name = name
+    # How much the item damages (or heals)
     self.damage = damage
+    # Dialogue for using the item
     self.dialogue = dialogue
+    # If the item is a 1 time use item
     self.temp = temp
+    # Description of the item
     self.description = description
     
 
 
   def itemuse(self, enemyhealth):
     """Contains the code that handles how the items are used"""
+    # Checks the if damage is positive
     if self.damage > 0:
         try:
+            # If so then the item is used on an enemy
             enemyhealth = enemyhealth - self.damage
             print(self.dialogue)
+        # Unless there is no current enemy
         except ValueError:
+            # Then this dialogue prints
             print("Who are you trying to attack?")
             print("You put the item away...")
         finally:
             print("\n")
     else:
+        # Otherwise if the damage is negative, the player heals
         user.health = user.health - self.damage
         print(self.dialogue)
 
@@ -55,7 +65,7 @@ stick = Item("Pointy Stick",
             """You poke the enemy with your stick!""",
             0,
             """A stick capable of dealing minor damage. 
-Still it's better than nothing.""")
+It's not all that powerful. Still it's better than nothing.""")
 
 
 sword = Item("Sword",
@@ -70,7 +80,8 @@ gold_sword = Item("Golden Sword",
                  15,
                  """You cut down the enemy with arcane powers!""",
                  0,
-                 """A Golden Sword c""")
+                 """A golden sword capable of doing colossal damage.
+A weapon enchanted with arcane powers to further boost it's strength""")
 
 key = Item("Key",
           None,

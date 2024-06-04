@@ -12,7 +12,8 @@ Combat\
 Search function\
 Inventory\
 Potions\
-Weapons
+Weapons\
+Final Boss
 
 
 ## Nice to have:
