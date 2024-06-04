@@ -40,6 +40,9 @@ def main_menu():
             # If player chooses quit, the game will stop
             elif user_input == "quit":
                 sys.exit("Thank you for playing.")
+            # Invalid action error
+            else:
+                print("Choose a valid action.")
 
 
 main_menu()

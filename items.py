@@ -4,43 +4,41 @@ from player import user
 
 class Item:
 # Generic item class
-  def __init__(self, name, damage, dialogue, temp, description, x_loc, y_loc, area):
-    # Name of the item
-    self.name = name
-    # How much the item damages (or heals)
-    self.damage = damage
-    # Dialogue for using the item
-    self.dialogue = dialogue
-    # If the item is a 1 time use item
-    self.temp = temp
-    # Description of the item
-    self.description = description
-    # Location of the item
-    self.x_loc = x_loc
-    self.y_loc = y_loc
-    self.area = area
+    def __init__(self, name, damage, dialogue, temp, description, x_loc, y_loc, area):
+        # Name of the item
+        self.name = name
+        # How much the item damages (or heals)
+        self.damage = damage
+        # Dialogue for using the item
+        self.dialogue = dialogue
+        # If the item is a 1 time use item
+        self.temp = temp
+        # Description of the item
+        self.description = description
+        # Location of the item
+        self.x_loc = x_loc
+        self.y_loc = y_loc
+        self.area = area
     
-
-
-  def itemuse(self, enemyhealth):
-    """Contains the code that handles how the items are used"""
-    # Checks the if damage is positive
-    if self.damage > 0:
-        try:
-            # If so then the item is used on an enemy
-            enemyhealth = enemyhealth - self.damage
+    def itemuse(self, enemyhealth):
+        """Contains the code that handles how the items are used"""
+        # Checks the if damage is positive
+        if self.damage > 0:
+            try:
+                # If so then the item is used on an enemy
+                enemyhealth = enemyhealth - self.damage
+                print(self.dialogue)
+            # Unless there is no current enemy
+            except ValueError:
+                # Then this dialogue prints
+                print("Who are you trying to attack?")
+                print("You put the item away...")
+            finally:
+                print("\n")
+        else:
+            # Otherwise if the damage is negative, the player heals
+            user.health = user.health - self.damage
             print(self.dialogue)
-        # Unless there is no current enemy
-        except ValueError:
-            # Then this dialogue prints
-            print("Who are you trying to attack?")
-            print("You put the item away...")
-        finally:
-            print("\n")
-    else:
-        # Otherwise if the damage is negative, the player heals
-        user.health = user.health - self.damage
-        print(self.dialogue)
 
 
 dmg_potion = Item("Damage Potion",

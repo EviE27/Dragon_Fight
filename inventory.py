@@ -1,5 +1,5 @@
 from player import user
-
+import items
 
 class Inventory:
 
