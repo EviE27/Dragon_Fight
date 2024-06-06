@@ -1,10 +1,9 @@
-import map
 from player import user
 
 
 class Item:
 # Generic item class
-    def __init__(self, name, damage, dialogue, temp, description, x_loc, y_loc, area):
+    def __init__(self, name, damage, dialogue, temp, description):
         # Name of the item
         self.name = name
         # How much the item damages (or heals)
@@ -15,11 +14,7 @@ class Item:
         self.temp = temp
         # Description of the item
         self.description = description
-        # Location of the item
-        self.x_loc = x_loc
-        self.y_loc = y_loc
-        self.area = area
-    
+
     def itemuse(self, enemyhealth):
         """Contains the code that handles how the items are used"""
         # Checks the if damage is positive
@@ -41,13 +36,15 @@ class Item:
             print(self.dialogue)
 
 
+# Create objects
 dmg_potion = Item("Damage Potion",
                  20,
-                 """You throw the potion at the enemy, causing it to burst open. 
-Magical smog and glass wound the enemy!""",
+                 """You throw the potion at the enemy, causing it to burst
+open. Magical smog and glass wound the enemy!""",
                  1,
-                 """A potion filled with magic that can gravely wound an enemy.""",
-                 2, 2, map.plain_map)
+                 """A potion filled with magic that can gravely wound
+an enemy."""
+                 )
 
 
 heal_potion = Item("Healing Potion",
@@ -55,16 +52,16 @@ heal_potion = Item("Healing Potion",
                   """You drink the potion. Your wounds fade 
 and weariness leaves your body.""",
                   1,
-                  """A potion that can heal even the most major wounds""",
-                  2, 2, map.plain_map)
+                  """A potion that can heal even the most major wounds"""
+                  )
 
 
 chicken = Item("Chicken",
               -25,
               """You eat the chicken and suddenly feel a lot better!""",
               1,
-              """Some chicken that can heal minor wounds""",
-              1, 2, map.tower_map)
+              """Some chicken that can heal minor wounds"""
+              )
 
 
 stick = Item("Pointy Stick",
@@ -72,8 +69,8 @@ stick = Item("Pointy Stick",
             """You poke the enemy with your stick!""",
             0,
             """A stick capable of dealing minor damage. 
-It's not all that powerful. Still it's better than nothing.""",
-            20, 20, "u start with this one dummy")
+It's not all that powerful. Still it's better than nothing."""
+            )
 
 
 sword = Item("Sword",
@@ -81,8 +78,8 @@ sword = Item("Sword",
             """You unsheathe your sword and slash at the enemy!""",
             0,
             """A steel sword capable of dealing major damage.
-An always reliable weapon favoured by many warriors.""",
-            0, 0, map.plain_map)
+An always reliable weapon favoured by many warriors."""
+            )
 
 
 gold_sword = Item("Golden Sword",
@@ -90,18 +87,30 @@ gold_sword = Item("Golden Sword",
                  """You cut down the enemy with arcane powers!""",
                  0,
                  """A golden sword capable of doing colossal damage.
-A weapon enchanted with arcane powers to further boost it's strength""",
-                 1, 0, map.tower_map)
+A weapon enchanted with arcane powers to further boost it's strength"""
+                 )
 
 
 key = Item("Key",
           None,
           """You open the treasure room with the key.""",
           None,
-          """A key that is specially designed for the treasure room.""",
-          2, 0, map.tower_map)
+          """A key that is specially designed for the treasure room."""
+          )
 
 
+plains_items = [
+    [sword, dmg_potion, "N/A"],
+    ["N/A", "N/A", heal_potion],
+    ["N/A", "N/A", "N/A"]
+]
+
+
+tower_items = [
+    ["N/A", gold_sword, key],
+    ["N/A", "N/A", "N/A"],
+    ["N/A", chicken, "N/A"]
+]
 
         
         

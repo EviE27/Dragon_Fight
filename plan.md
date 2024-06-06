@@ -46,11 +46,14 @@ make function that will find objects and put them in player inventory.
 
 
 ### V4
-???
-Complete June 12\
+Sami and Suri\
+omplete June 12\
 Combat - Health, damage, Final boss fight\
-Enemy atacks
-player attacks
+Enemy atacks\
+player attacks\
+Haveing a timer where the player has to stop the clock at 10 to get the full attack damage.\
+With potions one use thing(does not use timer)\
+The better the weapon the harder the timer is to time.
 
 ## Test day
 June 12th

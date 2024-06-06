@@ -1,3 +1,5 @@
+import sys
+
 import map
 
 
@@ -9,7 +11,7 @@ class Player:
         self.x_loc = x_loc
         self.y_loc = y_loc
         self.area = area
-        self.action = ["move, map, search, quit"]
+        self.action = ["move", "map", "inventory", "search", "quit"]
 
 
     def describeroom(self):
@@ -27,7 +29,9 @@ class Player:
         """Contains the code that prints the movement options for the player
         and allows the player to be able to move around the map"""
         # All the valid options the player has for movement
-        MoveOptions = ["w", "a" ,"s" ,"d" ,"e"]
+        print("\n")
+        MoveOptions = ["w", "a" ,"s" ,"d" ,"e", "r"]
+        r_check = 0
         # Plays the loop so long as a valid choice has not been selected
         while playerchoice == "N/A":
             try:
@@ -41,10 +45,21 @@ class Player:
                     print("w - Move Up")
                 if self.y_loc != 2:
                     print("s - Move Down")
+                if (self.area == map.plain_map 
+                    and self.y_loc == 0
+                    and self.x_loc == 2):
+                    print("r - Enter Lair")
+                    r_check = 1
+                elif (self.area == map.tower_map
+                     and self.y_loc == 2
+                     and self.x_loc == 2):
+                    print("r - Exit Lair")
+                    r_check = 1
                 # Prints the option to exit movement
                 print("e - Quit")
                 # Player then inputs their choice 
-                playerchoice = input("Type the letter to choose the option: ").lower()
+                playerchoice = input("""Type the letter to choose the
+option: """).lower()
                 print("\n")
                 # The input is tested to see if it's a number
                 playerchoice = float(playerchoice)
@@ -52,7 +67,8 @@ class Player:
             except ValueError:
                 # Checks if the player's choice was valid
                 if playerchoice not in MoveOptions:
-                    # If not then an error message is displayed and the loop continues
+                    # If not then an error message is displayed and the 
+                    # loop continues
                     print("Input a letter from the options")
                     playerchoice = "N/A"
             # No ValueError indicates a numerical value
@@ -95,7 +111,27 @@ class Player:
                     elif playerchoice == "s":
                         # The player is moved 1 room down
                         self.y_loc = self.y_loc + 1
-                        print("Moving Down")   
+                        print("Moving Down")
+                    # Check if player wants to exit game
+                    elif playerchoice == "e":
+                        # Thank you message will be printed
+                        sys.exit("Thank you for playing")
+                    # Check if player wants to enter the tower
+                    elif playerchoice == "r" and r_check == 1:
+                        # If the player is entering the tower
+                        if self.area == map.plain_map:
+                            # The player's location and area are switched
+                            self.area = map.tower_map
+                            self.x_loc = 2
+                            self.y_loc = 2
+                        # Otherwise the player is exiting the tower
+                        else:
+                            # The player's location and area are switched
+                            self.area = map.plain_map
+                            self.x_loc = 2
+                            self.y_loc = 0
+                    # Returns playerchoice for the treasure room check
+                    return playerchoice
 
 
 user = Player(100, 1, 2, map.plain_map)

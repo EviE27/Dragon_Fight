@@ -48,7 +48,8 @@ forest = Room("You are in the dark forest.")
 town = Room("You are walking through the small town.")
 bar = Room("You enter the local bar. It looks like theres a fight.")
 beware = Room("You stumbel across a warning. Beware the dragon in the tower.")
-start = Room("")
+start = Room("""To play the game you will need to type out the option.
+To compleate the action hit enter.""")
 entrance = Room("""You approch the tall stone tower.
 The tower has a giant woodend door with thick metal bars over it.""")
 brewery = Room("""You walked into the magical brewery.

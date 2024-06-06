@@ -20,10 +20,19 @@ added - search function\
 added - function to get item\
 added - comments\
 changed - room descriptions and len lengths\
-added - location to items
+added - location to items\
+added - quit option to main\
+add - item functionality \
+added - working key to open the room treasure room\
+fixed - circular importing
 
 
 V4\
+add - enemy attacks\
+add - enemy damage\
+add - players fight, hid, heal\
+add - fighting dialogue\
+add - victory
 
 
 

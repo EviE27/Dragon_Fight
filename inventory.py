@@ -1,5 +1,7 @@
-from player import user
 import items
+import map
+from player import user
+
 
 class Inventory:
 
@@ -10,25 +12,58 @@ class Inventory:
         """Contains codes that allow player to view their inventory"""
         # Print out items if player has something in inventory
         if self.inventory:
+            print("\n")
             print("Inventory: ")
             for item in self.inventory:
-                print(f"-{item}")
+                print(f"-{item.name}")
+        # Otherwise this message prints
         else:
             print("You have nothing in your inventory.")
-
 
     def searchroom(self):
         """Code for searching rooms"""
         try:
-            room = user.area[user.y_loc][user.x_loc]
-            if room.item != "N/A":
-                    self.inventory.append(room.item)
-                    print(f"You found {room.item}!")
-                    print(f"You put {room.item} away in your inventory!")
+            # Checks which area the player is in
+            if user.area == map.plain_map:
+                # The items in the arrays match up to the map array
+                # Due to this, the players location will match up to 
+                # the correct item
+                item = items.plains_items[user.y_loc][user.x_loc]
+            else:
+                item = items.tower_items[user.y_loc][user.x_loc]
+            # If the item is not "N/A", the item is added to the 
+            # player's inventory
+            if item != "N/A":
+                    self.inventory.append(item)
+                    print("\n")
+                    print(f"You found {item.name}!")
+                    print(f"You put {item.name} away in your inventory!")
+            # Otherwise this text prints
+            else:
+                print("Nothing notable in here...")
+        # In the event of an error, this text is printed
         except:
-            print("Nothing notable in here...")
+            print("""While you were searching, you tripped and stubbed
+your toe.""")
+            print("YEOOOOOOOOWWWCH")
         finally:
+            # A message to indicate to the player that the search is complete
             print("\n")
             print("Search complete!")
             print("\n")
-            
+
+
+inventory = Inventory()
+
+
+def treasureroom(playerchoice):
+    """Act as the lock for the treasure room"""
+    # Pushes the player back to where they initially came from
+    if playerchoice == "w":
+            user.y_loc = user.y_loc + 1
+    elif playerchoice == "a":
+            user.x_loc = user.x_loc + 1
+    elif playerchoice == "d":
+            user.x_loc = user.x_loc - 1
+    print("\n")
+    print("You seem to be missing the key to this room...")
