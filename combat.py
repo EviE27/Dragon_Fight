@@ -1,5 +1,6 @@
 import random
 from getkey import getkey
+import time
 
 import items
 import inventory as inv
@@ -13,14 +14,26 @@ dodgeoptions = ["w", "a", "s", "d"]
 def dodgewarning(dodge):
   """Contains code that will print which direction
   the player needs to dodge"""
-  if dodge == "w":
-    print("UP")
-  elif dodge == "a":
-    print("LEFT")
-  elif dodge == "d":
-    print("RIGHT")
-  else:
-    print("DOWN")
+        try:
+                if dodge == "w":
+                        visual = "arrow_up.txt"
+                elif dodge == "a":
+                        visual = "arrow_left.txt"
+                elif dodge == "d":
+                        visual = "arrow_right.txt"
+                else:
+                        visual = "arrow_down.txt"
+                with open(visual, "r") as file:
+                        print(file.read())
+        except:
+                if dodge == "w":
+                        print("UP")
+                elif dodge == "a":
+                        print("LEFT")
+                elif dodge == "d":
+                        print("RIGHT")
+                else:
+                        print("DOWN")
 
 
 class Enemy():
@@ -30,10 +43,15 @@ class Enemy():
         self.timer = timer
         self.damage = damage
 
+
+    def randomattack(self):
+        """Randomly determines the delay that the attack has"""
+        attack_times = [1, 4, 6, 10, 15]
+        self.timer = random.choice(attack_times)
+    
   
-    def slow_attack(self):
+    def enemy_attack(self):
         """Contains the code for a slower attack"""
-        stored_time = self.timer
         dodge = random.choice(dodgeoptions)
         while self.timer > 0:
             time.sleep(2)
@@ -52,23 +70,23 @@ class Enemy():
                 dodge = 1
                 break
         if dodge != 2:
-            
+                if dodge == 0:
                     print("You failed to dodge the attack in time!")
-                    print(f"You took {self.damage} damage!")
-            elif dodge == 1:
+                elif dodge == 1:
                     print("You dodged in the wrong direction!")
-                    print(f"You took {self.damage} damage!")
+                user.health = user.health - self.damage
+                print(f"You took {self.damage} damage!")
         else:
             print("You managed to dodge the attack!")
-
-    
+            
 
     def write_healthtable(self):
         """ """
         try:
             with open('health.txt', "w") as file:
-                file.write(tabulate(["Player",
-                                    tablefmt = 'simple_grid'))
+                file.write(tabulate(
+                    [["Player", user.health], ["Enemy", self.health]], 
+                    tablefmt = 'simple_grid'))
         except:
             print("Can't count your health")
         else:
@@ -87,6 +105,7 @@ class Enemy():
         finally:
             print("Be careful !!")
 
+    
     def combat(self):
         """ Codes for using the items in the inventory"""
         print("\n")

@@ -8,14 +8,11 @@ added, changed, removed, fixed, updated, converted, deprecated, security
 - maps printed to external files
 - player movement
 
-
-
 ## V2
 ### added 
 - items for the rooms
 - item damage
 - item discription
-
 
 ## V3
 ### added
@@ -41,10 +38,13 @@ added, changed, removed, fixed, updated, converted, deprecated, security
 - weapon selection print with damage value
 - fighting dialogue
 - victory
-
+- code to tell what map the player is on
+  
 ### Fixed
-
-
+- print statments in player and inventory
+  
+### updated 
+- player inventory now has stick to start
 
 
 
