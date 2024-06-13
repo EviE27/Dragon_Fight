@@ -3,7 +3,7 @@
 # Class: Computer Science 30
 # Assignment: Capstone Coding Project
 # Programmers: Sami Shahab, Eve Olson, Suri Ho
-# Version: v3.0
+# Version: v4.0
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 import sys
 

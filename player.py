@@ -11,8 +11,8 @@ class Player:
         self.x_loc = x_loc
         self.y_loc = y_loc
         self.area = area
-        self.action = ["move", "map", "inventory", "search", "quit"]
-
+        self.action = ["move", "map", "inventory", "search",
+                       "combat", "quit"]
 
     def describeroom(self):
         """Code that prints the description of the room 
@@ -58,8 +58,8 @@ class Player:
                 # Prints the option to exit movement
                 print("e - Quit")
                 # Player then inputs their choice 
-                playerchoice = input("""Type the letter to choose the
-option: """).lower()
+                playerchoice = input("Type the letter to choose the option: "
+                                    ).lower()
                 print("\n")
                 # The input is tested to see if it's a number
                 playerchoice = float(playerchoice)

@@ -19,6 +19,7 @@ Step Player object
 
 ### Test
 
+
 See if player can move around map and between maps
 
 ### V2
@@ -47,7 +48,7 @@ make function that will find objects and put them in player inventory.
 
 ### V4
 Sami and Suri\
-omplete June 12\
+complete June 12\
 Combat - Health, damage, Final boss fight\
 Enemy atacks\
 player attacks\
@@ -57,12 +58,6 @@ The better the weapon the harder the timer is to time.
 
 ## Test day
 June 12th
-
-
-      
-
-      
-
+ 
 
 ### notes
-player odject - movement, inventory, health

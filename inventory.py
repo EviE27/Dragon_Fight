@@ -6,7 +6,7 @@ from player import user
 class Inventory:
 
     def __init__(self):
-        self.inventory = []
+        self.inventory = [items.stick]
         
     def view_inventory(self):
         """Contains codes that allow player to view their inventory"""
@@ -24,11 +24,13 @@ class Inventory:
         """Code for searching rooms"""
         try:
             # Checks which area the player is in
+            plain = 0
             if user.area == map.plain_map:
                 # The items in the arrays match up to the map array
                 # Due to this, the players location will match up to 
                 # the correct item
                 item = items.plains_items[user.y_loc][user.x_loc]
+                plain = 1
             else:
                 item = items.tower_items[user.y_loc][user.x_loc]
             # If the item is not "N/A", the item is added to the 
@@ -38,6 +40,10 @@ class Inventory:
                     print("\n")
                     print(f"You found {item.name}!")
                     print(f"You put {item.name} away in your inventory!")
+                    if plain == 1:
+                        items.plains_items[user.y_loc][user.x_loc] = "N/A"
+                    else:
+                        items.tower_items[user.y_loc][user.x_loc] = "N/A"
             # Otherwise this text prints
             else:
                 print("Nothing notable in here...")
@@ -50,7 +56,6 @@ your toe.""")
             # A message to indicate to the player that the search is complete
             print("\n")
             print("Search complete!")
-            print("\n")
 
 
 inventory = Inventory()
