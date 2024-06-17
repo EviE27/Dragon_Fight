@@ -14,6 +14,7 @@ class Player:
         self.action = ["move", "map", "inventory", "search",
                        "combat", "quit"]
 
+    
     def describeroom(self):
         """Code that prints the description of the room 
         that the player is currently in"""

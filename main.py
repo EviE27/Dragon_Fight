@@ -7,13 +7,18 @@
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 import sys
 
+import combat
 import items
 import map
+import messages
 from inventory import inventory, treasureroom
 from player import user
 
 
 def main_menu():
+    # Print instructions
+    for message in messages.mess:
+        message.print_mess()
     # Loops the game
     while True:
         # Describes the room the player is in

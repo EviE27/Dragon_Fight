@@ -98,7 +98,7 @@ key = Item("Key",
           """A key that is specially designed for the treasure room."""
           )
 
-# Arrays of items' position on maps
+# Arrays of 
 plains_items = [
     [sword, dmg_potion, "N/A"],
     ["N/A", "N/A", heal_potion],

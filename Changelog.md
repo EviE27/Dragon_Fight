@@ -39,6 +39,8 @@ added, changed, removed, fixed, updated, converted, deprecated, security
 - fighting dialogue
 - victory
 - code to tell what map the player is on
+- made graphics for combat
+- added play instructions
   
 ### Fixed
 - print statments in player and inventory

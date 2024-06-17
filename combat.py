@@ -12,28 +12,29 @@ dodgeoptions = ["w", "a", "s", "d"]
 
 
 def dodgewarning(dodge):
-  """Contains code that will print which direction
-  the player needs to dodge"""
-        try:
-                if dodge == "w":
-                        visual = "arrow_up.txt"
-                elif dodge == "a":
-                        visual = "arrow_left.txt"
-                elif dodge == "d":
-                        visual = "arrow_right.txt"
-                else:
-                        visual = "arrow_down.txt"
-                with open(visual, "r") as file:
-                        print(file.read())
-        except:
-                if dodge == "w":
-                        print("UP")
-                elif dodge == "a":
-                        print("LEFT")
-                elif dodge == "d":
-                        print("RIGHT")
-                else:
-                        print("DOWN")
+    """Contains code that will print which direction
+    the player needs to dodge
+    """
+    try:
+        if dodge == "w":
+                visual = "arrow_up.txt"
+        elif dodge == "a":
+                visual = "arrow_left.txt"
+        elif dodge == "d":
+                visual = "arrow_right.txt"
+        else:
+                visual = "arrow_down.txt"
+        with open(visual, "r") as file:
+                print(file.read())
+    except:
+        if dodge == "w":
+                print("UP")
+        elif dodge == "a":
+                print("LEFT")
+        elif dodge == "d":
+                print("RIGHT")
+        else:
+                print("DOWN")
 
 
 class Enemy():
@@ -46,7 +47,7 @@ class Enemy():
 
     def randomattack(self):
         """Randomly determines the delay that the attack has"""
-        attack_times = [1, 4, 6, 10, 15]
+        attack_times = [2, 5, 7, 11, 16]
         self.timer = random.choice(attack_times)
     
   
@@ -54,19 +55,19 @@ class Enemy():
         """Contains the code for a slower attack"""
         dodge = random.choice(dodgeoptions)
         while self.timer > 0:
-            time.sleep(2)
+            time.sleep(1)
             self.timer -= 1
-            if self.timer == 6:
+            if self.timer == 1:
                 dodgewarning(dodge)
                 start = time.time()
                 dodge_attempt = getkey()
-            if attempt == dodge:
+            if dodge_attempt == dodge:
                 if end - start < 1:
                     dodge = 2
                 else:
                     dodge = 0
                 break
-            elif attempt != dodge:
+            elif dodge_attempt != dodge:
                 dodge = 1
                 break
         if dodge != 2:
@@ -78,17 +79,16 @@ class Enemy():
                 print(f"You took {self.damage} damage!")
         else:
             print("You managed to dodge the attack!")
-            
+
 
     def write_healthtable(self):
         """ """
         try:
             with open('health.txt', "w") as file:
-                file.write(tabulate(
-                    [["Player", user.health], ["Enemy", self.health]], 
-                    tablefmt = 'simple_grid'))
+                file.write(tabulate([["Player", user.health],
+                                     ["Enemy", self.health]]))
         except:
-            print("Can't count your health")
+            print("Can't see your health")
         else:
             print("Your health is noted")
         finally:
@@ -113,14 +113,20 @@ class Enemy():
         if (combatchoice == "damage potion" 
             and items.dmg_potion in inv.inventory.inventory):
             items.dmg_potion.itemuse(self.health)
-            del items.dmg_potion
         elif (combatchoice == "healing potion"
               and items.heal_potion in inv.inventory.inventory):
             items.heal_potion.itemuse(self.health)
-            del items.heal_potion
-        elif combatchoice == "chicken":
+        elif (combatchoice == "chicken"
+              and items.chicken in inv.inventory.inventory):
             items.chicken.itemuse(self.health)
-            del items.chicken
-        #elif combatchoice == "pointy stick":
+        elif (combatchoice == "pointy stick"
+              and items.stick in inv.inventory.inventory):
+            items.stick.itemuse(self.health)
+        elif (combatchoice == "sword"
+              and items.sword in inv.inventory.inventory):
+            items.sword.itemuse(self.health)
+        elif (combatchoice == "golden sword"
+              and items.gold_sword in inv.inventory.inventory):
+            items.gold_sword.itemuse(self.health)
         else:
             print("You don't have this item.")
